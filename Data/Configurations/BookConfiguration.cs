@@ -12,7 +12,7 @@ namespace Data.Configurations
         public void Configure(EntityTypeBuilder<Book> builder)
         {
             builder.HasKey(c => c.Id);
-            builder.HasOne(c => c.Author).WithOne(c => c.Book).HasForeignKey<Book>(c=> c.AuthorId);
+            builder.Property(c => c.Author).IsRequired();
         }
     }
 }

@@ -7,6 +7,6 @@ namespace Models
     public class Library
     {
         public Guid Id { get; set; }
-        public List<Book> Books { get; set; }
+        public List<LibraryBook> LibraryBooks { get; set; }
     }
 }

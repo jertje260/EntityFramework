@@ -12,6 +12,7 @@ namespace Data.Configurations
         public void Configure(EntityTypeBuilder<Book> builder)
         {
             builder.HasKey(c => c.Id);
+            builder.HasMany(c => c.LibraryBooks).WithOne(c => c.Book).HasForeignKey(c => c.BookId);
         }
     }
 }

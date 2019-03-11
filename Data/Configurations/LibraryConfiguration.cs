@@ -7,11 +7,12 @@ using Models;
 
 namespace Data.Configurations
 {
-    internal class BookConfiguration : IEntityTypeConfiguration<Book>
+    internal class LibraryConfiguration : IEntityTypeConfiguration<Library>
     {
-        public void Configure(EntityTypeBuilder<Book> builder)
+        public void Configure(EntityTypeBuilder<Library> builder)
         {
             builder.HasKey(c => c.Id);
+            builder.HasMany(c => c.Books);
         }
     }
 }

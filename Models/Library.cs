@@ -4,10 +4,9 @@ using System.Text;
 
 namespace Models
 {
-    public class Author
+    public class Library
     {
         public Guid Id { get; set; }
-        public string Name { get; set; }
         public List<Book> Books { get; set; }
     }
 }

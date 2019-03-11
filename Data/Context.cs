@@ -10,6 +10,7 @@ namespace Data
     {
         public DbSet<Author> Authors { get; set; }
         public DbSet<Book> Books { get; set; }
+        public DbSet<Library> Libraries { get; set; }
 
         public Context(DbContextOptions options) : base(options) { }
 
@@ -20,6 +21,7 @@ namespace Data
 
             modelBuilder.ApplyConfiguration(new BookConfiguration());
             modelBuilder.ApplyConfiguration(new AuthorConfiguration());
+            modelBuilder.ApplyConfiguration(new LibraryConfiguration());
 
 
             // this is a EF 2.2 feature, should apply all configurations in a single assembly

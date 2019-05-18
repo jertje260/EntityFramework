@@ -13,8 +13,10 @@ I have also added a script to create migrations for both contexts at the same ti
 The script can be ran with the command below:
 ```shell
 # bash
-add-migration.sh -name="migrationName" -startup="startupProject"
+add-migration.sh initial
 
 # powershell
-add-migration.ps1 -name="migrationName" -startup="startupProject"
+add-migration.ps1 initial
 ```
+
+they will quote the arguments given for the name the other parameters will be added by the script

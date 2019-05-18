@@ -1,16 +1,13 @@
-﻿using Data.Configurations;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Models;
 
-namespace Data.FirstLibraryConfigurations
+namespace Data.Configurations.FirstLibrarySeeding
 {
-    internal class BookConfiguration : BaseBookConfiguration
+    internal class BookConfiguration : IEntityTypeConfiguration<Book>
     {
-        public override void Configure(EntityTypeBuilder<Book> builder)
+        public void Configure(EntityTypeBuilder<Book> builder)
         {
-            base.Configure(builder);
-
             builder.HasData(new[]
             {
                 new Book

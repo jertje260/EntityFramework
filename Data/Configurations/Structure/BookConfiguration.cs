@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Models;
 
-namespace Data.Configurations
+namespace Data.Configurations.Structure
 {
-    internal class BaseBookConfiguration : IEntityTypeConfiguration<Book>
+    internal class BookConfiguration : IEntityTypeConfiguration<Book>
     {
         public virtual void Configure(EntityTypeBuilder<Book> builder)
         {

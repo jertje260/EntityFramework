@@ -1,15 +1,13 @@
-﻿using Data.Configurations;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Models;
 
-namespace Data.SecondLibraryConfigurations
+namespace Data.Configurations.SecondLibrarySeeding
 {
-    internal class AuthorConfiguration : BaseAuthorConfiguration
+    internal class AuthorConfiguration : IEntityTypeConfiguration<Author>
     {
-        public override void Configure(EntityTypeBuilder<Author> builder)
+        public void Configure(EntityTypeBuilder<Author> builder)
         {
-            base.Configure(builder);
             builder.HasData(
                 new[]
                 {

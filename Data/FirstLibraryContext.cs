@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Data.FirstLibraryConfigurations;
+using Data.Configurations.FirstLibrarySeeding;
 using Microsoft.EntityFrameworkCore;
 
 namespace Data

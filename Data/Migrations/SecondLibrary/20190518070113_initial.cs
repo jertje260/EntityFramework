@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Data.Migrations.FirstLibrary
+namespace Data.Migrations.SecondLibrary
 {
     public partial class initial : Migration
     {
@@ -41,7 +41,12 @@ namespace Data.Migrations.FirstLibrary
             migrationBuilder.InsertData(
                 table: "Authors",
                 columns: new[] { "Id", "Name" },
-                values: new object[] { new Guid("f49a617d-da70-4266-aad4-3e1f4daedcf1"), "Author1" });
+                values: new object[] { new Guid("4e375215-9286-4846-8aab-f6b24b07dd22"), "Author2" });
+
+            migrationBuilder.InsertData(
+                table: "Books",
+                columns: new[] { "Id", "AuthorId", "Title" },
+                values: new object[] { new Guid("f2d98a32-f1ba-48ac-92a7-954e8ca27843"), new Guid("4e375215-9286-4846-8aab-f6b24b07dd22"), "My Second Book" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Books_AuthorId",

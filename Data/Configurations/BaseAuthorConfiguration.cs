@@ -7,9 +7,9 @@ using Models;
 
 namespace Data.Configurations
 {
-    internal class AuthorConfiguration : IEntityTypeConfiguration<Author>
+    internal class BaseAuthorConfiguration : IEntityTypeConfiguration<Author>
     {
-        public void Configure(EntityTypeBuilder<Author> builder)
+        public virtual void Configure(EntityTypeBuilder<Author> builder)
         {
             builder.HasKey(c => c.Id);
             builder.HasMany(c => c.Books).WithOne(c => c.Author).HasForeignKey(c => c.AuthorId);

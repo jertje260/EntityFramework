@@ -7,12 +7,12 @@ using Models;
 
 namespace Data.Configurations
 {
-    internal class BookConfiguration : IEntityTypeConfiguration<Book>
+    internal class BaseBookConfiguration : IEntityTypeConfiguration<Book>
     {
-        public void Configure(EntityTypeBuilder<Book> builder)
+        public virtual void Configure(EntityTypeBuilder<Book> builder)
         {
             builder.HasKey(c => c.Id);
-            builder.Property(c => c.Author).IsRequired();
+            builder.Property(c => c.AuthorId).IsRequired();
         }
     }
 }

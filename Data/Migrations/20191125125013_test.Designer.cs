@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20191125124221_Test")]
-    partial class Test
+    [Migration("20191125125013_test")]
+    partial class test
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -69,6 +69,11 @@ namespace Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Libraries");
+
+                    b.HasData(
+                        new { Id = 1 },
+                        new { Id = 2 }
+                    );
                 });
 
             modelBuilder.Entity("Models.LibraryBook", b =>

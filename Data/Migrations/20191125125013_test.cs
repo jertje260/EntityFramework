@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Data.Migrations
 {
-    public partial class Test : Migration
+    public partial class test : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -79,12 +79,20 @@ namespace Data.Migrations
             migrationBuilder.InsertData(
                 table: "Authors",
                 columns: new[] { "Id", "Name" },
-                values: new object[] { 1, "author1" });
+                values: new object[,]
+                {
+                    { 1, "author1" },
+                    { 2, "author2" }
+                });
 
             migrationBuilder.InsertData(
-                table: "Authors",
-                columns: new[] { "Id", "Name" },
-                values: new object[] { 2, "author2" });
+                table: "Libraries",
+                column: "Id",
+                values: new object[]
+                {
+                    1,
+                    2
+                });
 
             migrationBuilder.InsertData(
                 table: "Books",

@@ -67,6 +67,11 @@ namespace Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Libraries");
+
+                    b.HasData(
+                        new { Id = 1 },
+                        new { Id = 2 }
+                    );
                 });
 
             modelBuilder.Entity("Models.LibraryBook", b =>

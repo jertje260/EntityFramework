@@ -13,6 +13,15 @@ namespace Data.Configurations
         {
             builder.HasKey(c => c.Id);
             builder.HasMany(c => c.LibraryBooks).WithOne(c=> c.Library).HasForeignKey(c=> c.LibraryId);
+
+            builder.HasData(new Library[]{
+                new Library{
+                    Id = 1
+                },
+                new Library {
+                    Id = 2
+                }
+            });
         }
     }
 }

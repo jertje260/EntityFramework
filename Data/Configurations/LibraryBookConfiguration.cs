@@ -11,8 +11,8 @@ namespace Data.Configurations
     {
         public void Configure(EntityTypeBuilder<LibraryBook> builder)
         {
-            builder.Property(c => c.Library).IsRequired();
-            builder.Property(c => c.Book).IsRequired();
+            builder.Property(c => c.LibraryId).IsRequired();
+            builder.Property(c => c.BookId).IsRequired();
             builder.HasKey(c => new { c.BookId, c.LibraryId });
             builder.HasOne(c => c.Library).WithMany(c => c.LibraryBooks).HasForeignKey(c => c.LibraryId);
             builder.HasOne(c => c.Book).WithMany(c => c.LibraryBooks).HasForeignKey(c => c.BookId);

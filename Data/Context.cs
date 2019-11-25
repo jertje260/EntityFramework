@@ -13,6 +13,25 @@ namespace Data
         public DbSet<Library> Libraries { get; set; }
 
         public Context(DbContextOptions options) : base(options) { }
+        public Context() {}
+
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
+        {
+            if (!options.IsConfigured)
+            {
+                base.OnConfiguring(options);
+                var connectionString = "Some bogus connectionString";
+
+                options
+                    .UseSqlServer(
+                        connectionString,
+                        opts => opts.CommandTimeout((int)TimeSpan.FromMinutes(120).TotalSeconds));
+            }
+            else
+            {
+                base.OnConfiguring(options);
+            }
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -22,6 +41,7 @@ namespace Data
             modelBuilder.ApplyConfiguration(new BookConfiguration());
             modelBuilder.ApplyConfiguration(new AuthorConfiguration());
             modelBuilder.ApplyConfiguration(new LibraryConfiguration());
+            modelBuilder.ApplyConfiguration(new LibraryBookConfiguration());
 
 
             // this is a EF 2.2 feature, should apply all configurations in a single assembly

@@ -6,9 +6,9 @@ namespace Models
 {
     public class LibraryBook
     {
-        public Library Library { get; set; }
+        public virtual Library Library { get; set; }
         public int LibraryId { get; set; }
-        public Book Book { get; set; }
+        public virtual Book Book { get; set; }
         public int BookId { get; set; }
     }
 }
